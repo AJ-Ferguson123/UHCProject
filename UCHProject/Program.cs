@@ -6,7 +6,9 @@ namespace UCHProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Menu menu = new Menu();
+
+        Console.WriteLine("Hello World!");
         }
     }
 }
