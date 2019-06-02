@@ -7,7 +7,8 @@ namespace UCHProject
    public class Nurse : Employee
     {
         public int NumberOfPatients {get; set; }
-
+        public int Health { get; set; }
+        public int Blood { get; set; }
         public Nurse(string name, int employeeNumber) : base(name, employeeNumber)
         {
             Salary = 50000

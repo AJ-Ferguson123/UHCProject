@@ -6,25 +6,25 @@ namespace UCHProject
 {
     class Menu
     {
-        string mainMenuInput;
+
         bool programIsRunning = false;
 
         Hospital hospital = new Hospital("Univeristy Circle Hospital");
 
-        public void OpeningMenu();
+        public bool OpeningMenu()
         {
-            
+
             Console.WriteLine("Welcome to University Hospitals Employee Management Software!");
             Console.WriteLine("Type start to begin the program. Type exit to close the program.");
             string openMenuInput = Console.ReadLine();
-            Console.Clear
+            Console.Clear();
 
-            if (openMenuInput = "start")
+            if (openMenuInput == "start")
             {
-                programIsRunning = true;            
+                programIsRunning = true;
             }
 
-            else if (openMenuInput = "exit")
+            else if (openMenuInput == "exit")
             {
                 programIsRunning = false;
             }
@@ -35,7 +35,7 @@ namespace UCHProject
                 OpeningMenu();
             }
 
-            while(programIsRunning)
+            while (programIsRunning)
             {
                 Console.WriteLine("Select from these Menu Options.");
                 MainMenu();
@@ -43,19 +43,26 @@ namespace UCHProject
             return true;
         }
 
-        public void MainMenu() 
+        public void MainMenu()
         {
             Console.WriteLine("Type 1 to add a new employee");
             Console.WriteLine("Type 2 to view current list of employees");
             Console.WriteLine("Type 3 to select a specific employee");
             Console.WriteLine("Type 4 to pay all employees");
             Console.WriteLine("Type 9 to exit");
-}           mainMenuInput = COnsole.ReadLine();
-            Console.Clear();
+            string mainMenuInput = Console.ReadLine();
+
+
+
+
+
 
             switch (mainMenuInput)
             {
-                case "1": 
+
+
+
+                case "1":
                     break;
                 case "2":
                     break;
@@ -65,26 +72,19 @@ namespace UCHProject
                     break;
                 case "9":
                     break;
+                default:
+                    Console.WriteLine("please type in a number from the menu.");
+                    break;
             }
 
+
+
         }
-        
+
         public void IndividualEmployeeMenu()
         {
-            Console.WriteLine("Which employee would you like to select")
+            Console.WriteLine("Which employee would you like to select");
         }
-//you rock!
-// lol. why do you say that?
-//just being positive
-//gotcha. im just looking into .TypeOf() methods as to be able to figure out some blockers i have moving foreward
-//you and i will get it  team work makes the dream work!  
-//oh dont you start with that cheesey teamwork lines now lol
-//will do, see ya tomorrow!
-//yup. are you heading out now?
-//will be on and off for the next few hours
-// ok, well i think i need to do some specific whiteboarding for the menu... so I think ill log off now and do that. just make sure to add and commit to github periodically here.
 
-//perfect ill do the same and compare notes tomorrow
-//sounds good. catch you tomorrow.
-
+    }
 }
