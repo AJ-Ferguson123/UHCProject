@@ -53,8 +53,8 @@ namespace UCHProject
 
         public void MainMenu()
         {
-            Console.WriteLine("Type 1 to add a new employee");
-            Console.WriteLine("Type 3 to view current list of employees");
+            //Console.WriteLine("Type 1 to add a new employee");
+            Console.WriteLine("Type 2 to view current list of employees");
             Console.WriteLine("Type 4 to select a specific employee");
             Console.WriteLine("Type 5 to pay all employees");
             Console.WriteLine("Type 9 to exit");
@@ -62,9 +62,13 @@ namespace UCHProject
 
             switch (mainMenuInput)
             {
-                case "1":
-                    break;
+                //case "1":
+                //    break;
                 case "2":
+                    {
+                        Console.WriteLine("Here is a list of current employees.");
+                        Phil.ShowInfo();
+                    }
                     break;
                 case "3":
                     break;

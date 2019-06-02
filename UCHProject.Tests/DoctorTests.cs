@@ -27,6 +27,20 @@ namespace UCHProject.Tests
 
         }
 
+        [Fact]
+        public void Showinfo_method_should_show_doctor_values()
+        {
+            string name = "john smith";
+            int employeeNumber = 001;
+            string specialty = "Neuro";
+            Doctor sut = new Doctor(name, employeeNumber, specialty);
+
+            sut.ShowInfo();
+
+            Assert.Equal("0",name );
+
+        }
+
 
     }
 }
