@@ -17,7 +17,7 @@ namespace UCHProject
         public List<Employee> listOfEmployees = new List<Employee>();
         public List<Patient> listOfPatients = new List<Patient>();
 
-        string employeeName = "no name";
+        string employeeName = "noname";
 
         int employeeNewNumber = 0;
 
