@@ -4,22 +4,25 @@ using System.Text;
 
 namespace UCHProject
 {
-    public class Employee
+    public abstract class Employee
     {
         public string Name;
         public int EmployeeNumber;
         public int Salary;
         public bool BeenPaid;
+        public string EmployeeType;
 
-        public Employee(string name, int employeeNumber)
+        public Employee(string name, int employeeNumber, int salary, bool beenpaid, string employeetype)
         {
             Name = name;
             EmployeeNumber = employeNewNumber;
-            Salary = 10000;
+            Salary = 0;
             BeenPaid = false;
+            EmployeeType = employeetype;
         }
 
-
+        public abstract void PaySalary();
+        public abstarct void EmployeeStatus();
 
 
     }
