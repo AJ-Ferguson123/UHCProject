@@ -25,7 +25,7 @@ namespace UCHProject
         {
             if (BeenPaid == false)
             {
-                Console.WriteLine($"You have been paid {this.Name} $50000");
+                Console.WriteLine($"You have been paid $0");
                 BeenPaid = true;
             }
             else
@@ -33,8 +33,18 @@ namespace UCHProject
                 Console.WriteLine($"{this.Name} has already been paid");
             }
         }
+        public virtual void ShowInfo()
+        {
+            Console.WriteLine("Employee Info:");
+            Console.WriteLine($"Name:{this.Name}/n" +
+                $"Employee Number:{this.EmployeeNumber}/n" +
+                $"Profession:{this.EmployeeType}/n" +
+                $"Salary:{this.Salary}/n" +
+                $"Been paid?:{this.BeenPaid}");
+            Console.WriteLine("");
+        }
 
-public void EmployeeStatus()
+        public void EmployeeStatus()
         {
 
         }

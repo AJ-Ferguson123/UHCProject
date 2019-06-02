@@ -6,7 +6,6 @@ namespace UCHProject
 {
     public class Patient
     {
-        int patientNumber;
         public int PatientNumber;
         public int Health_Level;
         public int Blood_Level;

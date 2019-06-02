@@ -18,12 +18,12 @@ namespace UCHProject.Tests
             Doctor sut = new Doctor(name, employeeNumber, specialty);
 
             //assert
-            Assert.Equal("joe shmo", sut.Name);
-            Assert.Equal(000, sut.EmployeeNumber);
-            Assert.Equal("Fail", sut.EmployeeType);
-            Assert.Equal(0, sut.Salary);
-            Assert.True(sut.BeenPaid);
-            Assert.Equal("fail", sut.Specialty);
+            Assert.Equal("john smith", sut.Name);
+            Assert.Equal(001, sut.EmployeeNumber);
+            Assert.Equal("Doctor", sut.EmployeeType);
+            Assert.Equal(90000, sut.Salary);
+            Assert.False(sut.BeenPaid);
+            Assert.Equal("Neuro", sut.Specialty);
 
         }
 

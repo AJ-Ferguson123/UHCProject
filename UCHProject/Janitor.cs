@@ -10,9 +10,9 @@ namespace UCHProject
 
         public Janitor(string name, int employeeNumber) : base(name, employeeNumber)
         {
-           // Salary = 40000
+            EmployeeType = "Janitor";
+            Salary = 40000;
             AreTheySweeping = false;
-
         }
 
         public void StartSweeping()
@@ -29,14 +29,25 @@ namespace UCHProject
         {
             if (BeenPaid == false)
             {
-                Console.WriteLine($"You have been paid {this.Name} $50000");
+                Console.WriteLine($"{this.Name} has been paid $40000");
                 BeenPaid = true;
             }
             else
             {
                 Console.WriteLine($"{this.Name} has already been paid");
             }
-        }                                    
+        }
+
+        public override void ShowInfo()
+        {
+            Console.WriteLine("Employee Info:");
+            Console.WriteLine($"Name:{this.Name}/n" +
+                $"Employee Number:{this.EmployeeNumber}/n" +
+                $"Profession:{this.EmployeeType}/n" +
+                $"Salary:{this.Salary}/n" +
+                $"Been paid?:{this.BeenPaid}");
+            Console.WriteLine("");
+        }
 
     }
 }

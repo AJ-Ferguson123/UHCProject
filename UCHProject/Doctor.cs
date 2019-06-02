@@ -7,7 +7,7 @@ namespace UCHProject
     public class Doctor : Employee
     {
         public string Specialty;
-        public int NumberOfPatients;
+        
         public int Health;
         public int Blood;
 
@@ -24,7 +24,7 @@ namespace UCHProject
         {
             if (BeenPaid == false)
             {
-                Console.WriteLine($"You have been paid {this.Name} $50000");
+                Console.WriteLine($"{this.Name} has been paid $90000");
                 BeenPaid = true;
             }
             else
@@ -33,32 +33,44 @@ namespace UCHProject
             }
         }
 
-        public void InteractDoctor()
+        public override void ShowInfo()
         {
-            bool interacting = true;
-            string interact = "";
-            //do
-            //{
-            //    Console.WriteLine("You are interacting with " + Name + ". Press any key to continue.");
-            //    Console.ReadLine();
-            //    Console.Clear();
-            //    Console.WriteLine("Interact Menu");
-            //    Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n");
-            //    interact = Console.ReadLine();
-            //    switch (interact)
-            //    {
-            //        case "1":
-            //            //DrawBlood();
-            //            break;
-            //        case "2":
-            //            //HealthLevel();
-            //            break;
-            //        case "3":
-
-            //            interacting = false;
-            //            break;
-            //    }
+            Console.WriteLine("Employee Info:");
+            Console.WriteLine($"Name:{this.Name}/n" +
+                $"Employee Number:{this.EmployeeNumber}/n" +
+                $"Profession:{this.EmployeeType}/n" +
+                $"Specialty:{this.Specialty}/n" +
+                $"Salary:{this.Salary}/n" +
+                $"Been paid?:{this.BeenPaid}");
+            Console.WriteLine("");
         }
+
+        //public void InteractDoctor()
+        //{
+        //    bool interacting = true;
+        //    string interact = "";
+        //    //do
+        //    //{
+        //    //    Console.WriteLine("You are interacting with " + Name + ". Press any key to continue.");
+        //    //    Console.ReadLine();
+        //    //    Console.Clear();
+        //    //    Console.WriteLine("Interact Menu");
+        //    //    Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n");
+        //    //    interact = Console.ReadLine();
+        //    //    switch (interact)
+        //    //    {
+        //    //        case "1":
+        //    //            //DrawBlood();
+        //    //            break;
+        //    //        case "2":
+        //    //            //HealthLevel();
+        //    //            break;
+        //    //        case "3":
+
+        //    //            interacting = false;
+        //    //            break;
+        //    //    }
+        //}
             
             ////while (interacting)
 

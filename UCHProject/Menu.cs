@@ -6,12 +6,18 @@ namespace UCHProject
 {
     public class Menu
     {
-
+        
         bool programIsRunning = false;
 
-        Hospital hospital = new Hospital("Univeristy Circle Hospital");
+        Hospital hospital = new Hospital("Univeristy Clinic Hospital");
+        Doctor Phil = new Doctor("Philip Dewgood", 14353, "MD");
+        Doctor Tom = new Doctor("Thomas Smith", 43750, "Surgeon");
+        Nurse Joy = new Nurse("Joy Williams", 38295, 5);
+        Nurse Sam = new Nurse("Sam Smith", 34567, 5);
+        Nurse Sarah = new Nurse("Sarah Godsend", 23456, 5);
+        Receptionist Sally = new Receptionist("Sally Bible", 21212);
+        Janitor Bill = new Janitor("Bill Harris", 31313);
         
-
         public bool OpeningMenu()
         {
 
@@ -54,15 +60,8 @@ namespace UCHProject
             Console.WriteLine("Type 9 to exit");
             string mainMenuInput = Console.ReadLine();
 
-
-            
-
-
             switch (mainMenuInput)
             {
-
-
-
                 case "1":
                     break;
                 case "2":
@@ -78,7 +77,7 @@ namespace UCHProject
                     break;
 
             }
-            
+
 
 
 

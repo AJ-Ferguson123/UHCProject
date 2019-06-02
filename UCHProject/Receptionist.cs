@@ -11,6 +11,7 @@ namespace UCHProject
 
         public Receptionist(string name, int employeeNumber) : base(name, employeeNumber)
         {
+            EmployeeType = "Receptionist";
             Salary = 45000;
             AreTheyOnThePhone = false;
         }
@@ -29,7 +30,7 @@ namespace UCHProject
         {
             if (BeenPaid == false)
             {
-                Console.WriteLine($"You have been paid {this.Name} $50000");
+                Console.WriteLine($"{this.Name} has been paid $45000");
                 BeenPaid = true;
             }
             else
@@ -38,6 +39,17 @@ namespace UCHProject
             }
 
 
+        }
+
+        public override void ShowInfo()
+        {
+            Console.WriteLine("Employee Info:");
+            Console.WriteLine($"Name:{this.Name}/n" +
+                $"Employee Number:{this.EmployeeNumber}/n" +
+                $"Profession:{this.EmployeeType}/n" +
+                $"Salary:{this.Salary}/n" +
+                $"Been paid?:{this.BeenPaid}");
+            Console.WriteLine("");
         }
 
 
