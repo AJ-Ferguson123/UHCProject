@@ -14,6 +14,7 @@ namespace UCHProject
             Salary = 50000
             NumberOfPatients = 0;
         }
+       
 
         public override void PaySalary()
         {

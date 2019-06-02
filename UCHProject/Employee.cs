@@ -15,14 +15,21 @@ namespace UCHProject
         public Employee(string name, int employeeNumber, int salary, bool beenpaid, string employeetype)
         {
             Name = name;
-            EmployeeNumber = employeNewNumber;
+            EmployeeNumber = employeeNumber;
             Salary = 0;
             BeenPaid = false;
             EmployeeType = employeetype;
         }
 
-        public abstract void PaySalary();
-        public abstarct void EmployeeStatus();
+        public void PaySalary()
+        {
+            this.BeenPaid = true;
+        }
+
+        public void EmployeeStatus()
+        {
+
+        }
 
 
     }

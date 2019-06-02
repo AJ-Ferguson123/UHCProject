@@ -3,7 +3,7 @@ using Xunit;
 
 namespace UCHProject.Tests
 {
-    public class UnitTest1
+    public class MenuTests
     {
         [Fact]
         public void Test1()

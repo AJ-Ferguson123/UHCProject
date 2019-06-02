@@ -24,12 +24,13 @@ namespace UCHProject
         {
             Health += 5;
             Console.WriteLine("The doctor has performed a health check");
-
-
-
         }
 
-
+        public void Blood()
+        {
+            Blood += 5;
+            Console.WriteLine("The doctor has performed blood work");
+        }
 
 
 
