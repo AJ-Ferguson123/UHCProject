@@ -36,10 +36,10 @@ namespace UCHProject
         public virtual void ShowInfo()
         {
             Console.WriteLine("Employee Info:");
-            Console.WriteLine($"Name:{this.Name}/n" +
-                $"Employee Number:{this.EmployeeNumber}/n" +
-                $"Profession:{this.EmployeeType}/n" +
-                $"Salary:{this.Salary}/n" +
+            Console.WriteLine($"Name:{this.Name}\n" +
+                $"Employee Number:{this.EmployeeNumber}\n" +
+                $"Profession:{this.EmployeeType}\n" +
+                $"Salary:{this.Salary}\n" +
                 $"Been paid?:{this.BeenPaid}");
             Console.WriteLine("");
         }
