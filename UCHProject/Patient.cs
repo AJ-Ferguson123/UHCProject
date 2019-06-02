@@ -4,35 +4,23 @@ using System.Text;
 
 namespace UCHProject
 {
-    class Patient
+    public class Patient
     {
+        int patientNumber;
+        public int PatientNumber;
+        public int Health_Level;
+        public int Blood_Level;
+        
+
         public Patient(int patientnumber) 
         {
-            Health = 100;
-            Blood = 100;
-        }
-        public void NurseHealth()
-        {
-            Health += 3;
-            Console.WriteLine("The doctor has performed a health check");
+            PatientNumber = patientnumber;
+            Health_Level = 100;
+            Blood_Level = 100;
         }
 
-        public void NrseBlood()
-        {
-            Blood += 3;
-            Console.WriteLine("The doctor has performed blood work");
-        }
-        public void DoctorHealth()
-        {
-            Health += 5;
-            Console.WriteLine("The doctor has performed a health check");
-        }
+        
 
-        public void DoctorBlood()
-        {
-            Blood += 5;
-            Console.WriteLine("The doctor has performed blood work");
-        }
 
 
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UCHProject
 {
-    class Hospital
+    public class Hospital
     {
         
         public string Name;
@@ -15,7 +15,6 @@ namespace UCHProject
         }
 
         public List<Employee> listOfEmployees = new List<Employee>();
-        public List<Doctor> ListOfDoctors = new List<Doctor>();
         public List<Patient> listOfPatients = new List<Patient>();
 
         string employeeName = "noname";
@@ -25,13 +24,23 @@ namespace UCHProject
         public void CreateEmployee()
         {
             string employeeName = "noname";
-            int employeeNewNumber = employeeNewNumber + 1);
+            int employeeNumber = 0;
+            string employeeType = "nojob";
+            
 
 
         }
+        public void CreatePatients()
+        {
+            Patient testCreatedPatient;
+            int patientNumber;
+            for (patientNumber = 1; patientNumber <= 5; patientNumber++)
 
-
+            testCreatedPatient = new Patient(patientNumber);
+        }
         
+
+
 
     }
 }

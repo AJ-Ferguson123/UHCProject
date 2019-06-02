@@ -8,25 +8,33 @@ namespace UCHProject
     {
         public string Name;
         public int EmployeeNumber;
+        public string EmployeeType;
         public int Salary;
         public bool BeenPaid;
-        public string EmployeeType;
 
-        public Employee(string name, int employeeNumber, int salary, bool beenpaid, string employeetype)
+        public Employee(string name, int employeeNumber)
         {
             Name = name;
             EmployeeNumber = employeeNumber;
+            EmployeeType = "employee";
             Salary = 0;
             BeenPaid = false;
-            EmployeeType = employeetype;
         }
 
-        public void PaySalary()
+        public virtual void PaySalary()
         {
-            this.BeenPaid = true;
+            if (BeenPaid == false)
+            {
+                Console.WriteLine($"You have been paid {this.Name} $50000");
+                BeenPaid = true;
+            }
+            else
+            {
+                Console.WriteLine($"{this.Name} has already been paid");
+            }
         }
 
-        public void EmployeeStatus()
+public void EmployeeStatus()
         {
 
         }
