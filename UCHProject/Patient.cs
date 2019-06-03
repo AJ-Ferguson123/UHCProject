@@ -24,7 +24,27 @@ namespace UCHProject
                 $"Health Level {this.Health_Level}\n" +
                 $"Blood Level:{this.Blood_Level}");
         }
-        
+
+        public void DoctorDrawBlood()
+        {
+            this.Blood_Level -= 1;
+        }
+
+        public void DoctorCareForPatient()
+        {
+            this.Health_Level += 10;
+        }
+
+        public void NurseDrawBlood()
+        {
+            this.Blood_Level -= 3;
+        }
+
+        public void NurseCareForPatient()
+        {
+            this.Health_Level += 5;
+        }
+
 
 
 

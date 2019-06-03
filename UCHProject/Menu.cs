@@ -9,27 +9,32 @@ namespace UCHProject
         
         bool programIsRunning = false;
         
-        Hospital hospital = new Hospital("Univeristy Clinic Hospital");
-        Doctor Phil = new Doctor("Philip Dewgood", 14353, "MD");
-        Doctor Tom = new Doctor("Thomas Smith", 43750, "Surgeon");
-        Nurse Joy = new Nurse("Joy Williams", 38295, 5);
-        Nurse Sam = new Nurse("Sam Smith", 34567, 5);
-        Nurse Sarah = new Nurse("Sarah Godsend", 23456, 5);
-        Receptionist Sally = new Receptionist("Sally Bible", 21212);
-        Janitor Bill = new Janitor("Bill Harris", 31313);
+        public Hospital hospital = new Hospital("Univeristy Clinic Hospital");
         
-       
+        
+        public void ConstructOriginalEmployees()
+        {
+            Doctor doctor = new Doctor("Philip Dewgood", 14353, "MD");
+            hospital.listOfEmployees.Add(doctor);
+            doctor = new Doctor("Thomas Smith", 43750, "Surgeon");
+            hospital.listOfEmployees.Add(doctor);
+            Nurse nurse = new Nurse("Joy Williams", 38295, 5);
+            hospital.listOfEmployees.Add(nurse);
+            nurse = new Nurse("Sam Smith", 34567, 5);
+            hospital.listOfEmployees.Add(nurse);
+            nurse = new Nurse("Sarah Godsend", 23456, 5);
+            hospital.listOfEmployees.Add(nurse);
+            Receptionist receptionist = new Receptionist("Sally Bible", 21212);
+            hospital.listOfEmployees.Add(receptionist);
+            Janitor janitor = new Janitor("Bill Harris", 31313);
+            hospital.listOfEmployees.Add(janitor);
+        }
 
         public bool OpeningMenu()
         {
-            hospital.listOfEmployees.Add(Phil);
-            hospital.listOfEmployees.Add(Tom);
-            hospital.listOfEmployees.Add(Joy);
-            hospital.listOfEmployees.Add(Sam);
-            hospital.listOfEmployees.Add(Sarah);
-            hospital.listOfEmployees.Add(Sally);
-            hospital.listOfEmployees.Add(Bill);
+            hospital = string 
             hospital.ConstructPatients();
+            ConstructOriginalEmployees();
             Console.WriteLine("Welcome to University Hospitals Employee Management Software!");
             Console.WriteLine("Type start to begin the program. Type exit to close the program.");
             string openMenuInput = Console.ReadLine();
@@ -77,13 +82,13 @@ namespace UCHProject
                 case "2":
                     {
                         Console.WriteLine("Here is a list of current employees.");
-                        Phil.ShowInfo();
-                        Tom.ShowInfo();
-                        Joy.ShowInfo();
-                        Sam.ShowInfo();
-                        Sarah.ShowInfo();
-                        Sally.ShowInfo();
-                        Bill.ShowInfo();
+                        //Phil.ShowInfo();
+                        //Tom.ShowInfo();
+                        //Joy.ShowInfo();
+                        //Sam.ShowInfo();
+                        //Sarah.ShowInfo();
+                        //Sally.ShowInfo();
+                        //Bill.ShowInfo();
                     }
                     break;
                     
@@ -102,13 +107,13 @@ namespace UCHProject
                     break;
 
                 case "5":
-                    Phil.PaySalary();
-                    Tom.PaySalary();
-                    Joy.PaySalary();
-                    Sam.PaySalary();
-                    Sarah.PaySalary();
-                    Sally.PaySalary();
-                    Bill.PaySalary();
+                    //Phil.PaySalary();
+                    //Tom.PaySalary();
+                    //Joy.PaySalary();
+                    //Sam.PaySalary();
+                    //Sarah.PaySalary();
+                    //Sally.PaySalary();
+                    //Bill.PaySalary();
                     break;
 
                 case "9": programIsRunning = false;
@@ -170,13 +175,13 @@ namespace UCHProject
             Console.WriteLine("What would you like to do?");
             if (selectedEmployee.GetType() == typeof(Doctor))
             {
-                Console.WriteLine("youve have selected doctor");
-                //Doctor selectedDoctor = selectedEmployee;
+                selectedEmployee.InteractDoctor();
             }
 
             else if (selectedEmployee.GetType() == typeof(Nurse))
             {
-                Console.WriteLine("youve have selected nurse");
+                Console.Clear();
+                Console.WriteLine($"youve have selected {selectedEmployee.Name}");
                 selectedEmployee.ShowInfo();
             }
 

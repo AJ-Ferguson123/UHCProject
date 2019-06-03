@@ -43,7 +43,10 @@ namespace UCHProject
                 $"Been paid?:{this.BeenPaid}");
             Console.WriteLine("");
         }
-
+        public virtual void InteractDoctor()
+        {
+            
+        }
         public void EmployeeStatus()
         {
 
