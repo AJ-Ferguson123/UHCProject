@@ -50,7 +50,8 @@ namespace UCHProject
                 $"Employee Number:{this.EmployeeNumber}\n" +
                 $"Profession:{this.EmployeeType}\n" +
                 $"Salary:{this.Salary}\n" +
-                $"Been paid?:{this.BeenPaid}");
+                $"Been paid?:{this.BeenPaid}\n" +
+                $"Answering Phones?: {this.AreTheyOnThePhone}");
             Console.WriteLine("");
         }
 

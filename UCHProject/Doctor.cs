@@ -55,15 +55,16 @@ namespace UCHProject
                 Patient selectedPatient;
                 
 
-                Console.Clear();
+                
                 Console.WriteLine($"You are interacting with {this.Name}.");
                 Console.WriteLine("");
                 Console.WriteLine("Interact Menu");
-                Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n 3 = Return to above menu");
+                Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n 3 = Show the status of Patients:\n 4 = Return to above menu");
                 string interactDoctorInput = Console.ReadLine();
                 switch (interactDoctorInput)
                 {
                     case "1":
+                        Console.Clear();
                         Console.WriteLine("Which Patient would you like to select");
                         Hospital.IndividualPatientList();
 
@@ -72,6 +73,7 @@ namespace UCHProject
                         selectedPatient.NurseDrawBlood();
                         break;
                     case "2":
+                        Console.Clear();
                         Console.WriteLine("Which Patient would you like to select");
                         Hospital.IndividualPatientList();
 
@@ -79,7 +81,17 @@ namespace UCHProject
                         selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
                         selectedPatient.NurseCareForPatient();
                         break;
-                    case "3":interacting = false;
+                    case "3":
+                        {
+                            Console.Clear();
+                            foreach (Patient element in Hospital.listOfPatients)
+                            {
+                                element.PatientShowInfo();
+                                Console.WriteLine("");
+                            }
+                        }
+                        break;
+                    case "4":interacting = false;
                         break;
                 }
             } while (interacting);

@@ -105,13 +105,13 @@ namespace UCHProject
                     break;
 
                 case "5":
-                    //Phil.PaySalary();
-                    //Tom.PaySalary();
-                    //Joy.PaySalary();
-                    //Sam.PaySalary();
-                    //Sarah.PaySalary();
-                    //Sally.PaySalary();
-                    //Bill.PaySalary();
+                    Console.Clear();
+                    Console.WriteLine("You have paid all of your employees.");
+                    foreach (Employee element in hospital.listOfEmployees)
+                    {
+                        element.PaySalary();
+                        Console.WriteLine("");
+                    }
                     break;
 
                 case "9": programIsRunning = false;
@@ -128,8 +128,8 @@ namespace UCHProject
 
         public void IndividualEmployeeMenu()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Which employee would you like to select");
             hospital.IndividualEmployeeList();
 
