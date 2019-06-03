@@ -60,7 +60,7 @@ namespace UCHProject
                 Console.ReadLine();
                 Console.Clear();
                 Console.WriteLine("Interact Menu");
-                Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n 3 = Return to above menu");
+                Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n 3 = Show the status of Patients:\n 4 = Return to above menu");
                 string interactNurseInput = Console.ReadLine();
                 switch (interactNurseInput)
                 {
@@ -81,6 +81,16 @@ namespace UCHProject
                         selectedPatient.DoctorCareForPatient();
                         break;
                     case "3":
+                        {
+                            Console.Clear();
+                            foreach (Patient element in Hospital.listOfPatients)
+                            {
+                                element.PatientShowInfo();
+                                Console.WriteLine("");
+                            }
+                        }
+                        break;
+                    case "4":
                         interacting = false;
                         break;
                 }

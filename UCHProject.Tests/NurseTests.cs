@@ -10,12 +10,15 @@ namespace UCHProject.Tests
         public void Nurse_constructor_should_Use_employee_base_constructor_and_then_overwrite_via_class_constructor()
         {
             //arange
+            Hospital hospital = new Hospital("Univeristy Clinic Hospital");
             string name = "jonna smith";
             int employeeNumber = 001;
             int numberOfPatients = 5;
+            
 
+            
             //act
-            Nurse sut = new Nurse(name, employeeNumber, numberOfPatients);
+            Nurse sut = new Nurse(name, employeeNumber, numberOfPatients, hospital);
 
             //assert
             Assert.Equal("jonna smith", sut.Name);

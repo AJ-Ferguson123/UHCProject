@@ -14,8 +14,8 @@ namespace UCHProject
         public Patient(int patientnumber) 
         {
             PatientNumber = patientnumber;
-            Health_Level = 100;
-            Blood_Level = 100;
+            Blood_Level = 20;
+            Health_Level = 10;
         }
 
         public void PatientShowInfo()
@@ -28,7 +28,7 @@ namespace UCHProject
         public void DoctorDrawBlood()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            this.Blood_Level -= 5;
+            this.Blood_Level -= 1;
             Console.ForegroundColor = ConsoleColor.White;
         }
 

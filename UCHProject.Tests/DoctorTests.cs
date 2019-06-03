@@ -10,12 +10,13 @@ namespace UCHProject.Tests
         public void Doctor_constructor_should_Use_employee_base_constructor_and_then_overwrite_via_class_constructor()
         {
             //arange
+            Hospital hospital = new Hospital("Univeristy Clinic Hospital");
             string name = "john smith";
             int employeeNumber = 001;
             string specialty = "Neuro";
 
             //act
-            Doctor sut = new Doctor(name, employeeNumber, specialty);
+            Doctor sut = new Doctor(name, employeeNumber, hospital, specialty);
 
             //assert
             Assert.Equal("john smith", sut.Name);
@@ -30,10 +31,11 @@ namespace UCHProject.Tests
         [Fact]
         public void Showinfo_method_should_show_doctor_values()
         {
+            Hospital hospital = new Hospital("Univeristy Clinic Hospital");
             string name = "john smith";
             int employeeNumber = 001;
             string specialty = "Neuro";
-            Doctor sut = new Doctor(name, employeeNumber, specialty);
+            Doctor sut = new Doctor(name, employeeNumber, hospital, specialty);
 
             sut.ShowInfo();
 

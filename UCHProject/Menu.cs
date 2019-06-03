@@ -128,14 +128,13 @@ namespace UCHProject
 
         public void IndividualEmployeeMenu()
         {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Clear();            
             Console.WriteLine("Which employee would you like to select");
             hospital.IndividualEmployeeList();
 
             int IndividualEmployeeInput = Convert.ToInt32(Console.ReadLine());
             Employee selectedEmployee = hospital.listOfEmployees[IndividualEmployeeInput - 1];
-            Console.WriteLine("What would you like to do?");
+            //Console.WriteLine("What would you like to do?");
             if (selectedEmployee.GetType() == typeof(Doctor))
             {
                 selectedEmployee.InteractDoctor();
