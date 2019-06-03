@@ -8,7 +8,7 @@ namespace UCHProject
     {
         public bool AreTheySweeping;
 
-        public Janitor(string name, int employeeNumber) : base(name, employeeNumber)
+        public Janitor(string name, int employeeNumber, Hospital hospital) : base(name, employeeNumber, hospital)
         {
             EmployeeType = "Janitor";
             Salary = 40000;
@@ -29,12 +29,16 @@ namespace UCHProject
         {
             if (BeenPaid == false)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"{this.Name} has been paid $40000");
                 BeenPaid = true;
+                Console.ForegroundColor = ConsoleColor.White;
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"{this.Name} has already been paid");
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 

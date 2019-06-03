@@ -9,27 +9,29 @@ namespace UCHProject
         
         public string Specialty;
         
-        public Doctor(string name, int employeeNumber, string specialty) : base(name, employeeNumber)
+        public Doctor(string name, int employeeNumber, Hospital hospital, string specialty) : base(name, employeeNumber, hospital)
         {
             EmployeeType = "Doctor";
             Specialty = specialty;
             Salary = 90000;
         }
-        private void GetHospitalObject()
-        {
-            get { return hospital}
-        }
+
+        
 
         public override void PaySalary()
         {
             if (BeenPaid == false)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"{this.Name} has been paid $90000");
                 BeenPaid = true;
+                Console.ForegroundColor = ConsoleColor.White;
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"{this.Name} has already been paid");
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
@@ -66,18 +68,18 @@ namespace UCHProject
                 {
                     case "1":
                         Console.WriteLine("Which Patient would you like to select");
-                        hospital.IndividualPatientList();
+                        Hospital.IndividualPatientList();
 
                         IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
-                        selectedPatient = hospital.listOfPatients[IndividualPatientInput - 1];
+                        selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
                         selectedPatient.DoctorDrawBlood();
                         break;
                     case "2":
                         Console.WriteLine("Which Patient would you like to select");
-                        hospital.IndividualPatientList();
+                        Hospital.IndividualPatientList();
 
                         IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
-                        selectedPatient = hospital.listOfPatients[IndividualPatientInput - 1];
+                        selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
                         selectedPatient.DoctorCareForPatient();
                         break;
                     case "3":interacting = false;

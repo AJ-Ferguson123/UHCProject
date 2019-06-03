@@ -9,7 +9,7 @@ namespace UCHProject
 
         public bool AreTheyOnThePhone;
 
-        public Receptionist(string name, int employeeNumber) : base(name, employeeNumber)
+        public Receptionist(string name, int employeeNumber, Hospital hospital) : base(name, employeeNumber, hospital)
         {
             EmployeeType = "Receptionist";
             Salary = 45000;
@@ -30,12 +30,16 @@ namespace UCHProject
         {
             if (BeenPaid == false)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"{this.Name} has been paid $45000");
                 BeenPaid = true;
+                Console.ForegroundColor = ConsoleColor.White;
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"{this.Name} has already been paid");
+                Console.ForegroundColor = ConsoleColor.White;
             }
 
 

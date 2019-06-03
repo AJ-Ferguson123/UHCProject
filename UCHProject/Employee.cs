@@ -11,14 +11,16 @@ namespace UCHProject
         public string EmployeeType;
         public int Salary;
         public bool BeenPaid;
+        public Hospital Hospital;
 
-        public Employee(string name, int employeeNumber)
+        public Employee(string name, int employeeNumber, Hospital hospital)
         {
             Name = name;
             EmployeeNumber = employeeNumber;
             EmployeeType = "employee";
             Salary = 0;
             BeenPaid = false;
+            Hospital = hospital;
         }
 
         public virtual void PaySalary()

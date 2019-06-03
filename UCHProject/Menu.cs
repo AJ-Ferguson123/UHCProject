@@ -8,34 +8,36 @@ namespace UCHProject
     {
         
         bool programIsRunning = false;
-        
         public Hospital hospital = new Hospital("Univeristy Clinic Hospital");
         
         
+        
+
+        
         public void ConstructOriginalEmployees()
         {
-            Doctor doctor = new Doctor("Philip Dewgood", 14353, "MD");
+            Doctor doctor = new Doctor("Philip Dewgood", 14353, hospital, "MD");
             hospital.listOfEmployees.Add(doctor);
-            doctor = new Doctor("Thomas Smith", 43750, "Surgeon");
+            doctor = new Doctor("Thomas Smith", 43750, hospital, "Surgeon");
             hospital.listOfEmployees.Add(doctor);
-            Nurse nurse = new Nurse("Joy Williams", 38295, 5);
+            Nurse nurse = new Nurse("Joy Williams", 38295, 5, hospital);
             hospital.listOfEmployees.Add(nurse);
-            nurse = new Nurse("Sam Smith", 34567, 5);
+            nurse = new Nurse("Sam Smith", 34567, 5, hospital);
             hospital.listOfEmployees.Add(nurse);
-            nurse = new Nurse("Sarah Godsend", 23456, 5);
+            nurse = new Nurse("Sarah Godsend", 23456, 5, hospital);
             hospital.listOfEmployees.Add(nurse);
-            Receptionist receptionist = new Receptionist("Sally Bible", 21212);
+            Receptionist receptionist = new Receptionist("Sally Bible", 21212, hospital);
             hospital.listOfEmployees.Add(receptionist);
-            Janitor janitor = new Janitor("Bill Harris", 31313);
+            Janitor janitor = new Janitor("Bill Harris", 31313, hospital);
             hospital.listOfEmployees.Add(janitor);
         }
 
         public bool OpeningMenu()
         {
-            hospital = string 
+            
             hospital.ConstructPatients();
             ConstructOriginalEmployees();
-            Console.WriteLine("Welcome to University Hospitals Employee Management Software!");
+            Console.WriteLine("Welcome to University Hospitals Employee Management Software!\n");
             Console.WriteLine("Type start to begin the program. Type exit to close the program.");
             string openMenuInput = Console.ReadLine();
             Console.Clear();
@@ -52,14 +54,15 @@ namespace UCHProject
             }
 
             else
-            {
-                Console.WriteLine("Please select and type either start or exit.");
+            {                
+                Console.WriteLine("Please select and type either start, or exit.");
                 OpeningMenu();
+                
             }
 
             while (programIsRunning)
             {
-                Console.WriteLine("Select from these Menu Options.");
+                Console.WriteLine("Select from these Menu Options.\n");
                 MainMenu();
             }
             return true;
@@ -67,18 +70,18 @@ namespace UCHProject
 
         public void MainMenu()
         {
-            //Console.WriteLine("Type 1 to add a new employee");
+            Console.ForegroundColor = ConsoleColor.Blue;            
             Console.WriteLine("Type 2 to view current list of employees");
             Console.WriteLine("Type 4 to select a specific employee");
             Console.WriteLine("Type 5 to pay all employees");
             Console.WriteLine("Type 6 Show status of current of patients");
             Console.WriteLine("Type 9 to exit");
             string mainMenuInput = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
 
             switch (mainMenuInput)
             {
-                //case "1":
-                //    break;
+                
                 case "2":
                     {
                         Console.WriteLine("Here is a list of current employees.");
@@ -130,42 +133,10 @@ namespace UCHProject
 
         }
 
-        //    public void AddDoctorToHospital()
-        //    {
-        //        Doctor doctor = new Doctor("no name", "no specialty");
-        //        Doctor.AddDoctor();
-        //        DoctorList.Add(Doctor);
-        //    }
-
-        //    public void AddNurseToHospital()
-        //    {
-        //        Nurse nurse = new Nurse("no name", "no specialty");
-        //        Nurse.AddNurse();
-        //        NurseList.Add(Nurse);
-        //    }
-
-        //    public void HospitalDoctorInfo()
-        //    {
-        //        int doctorNumber = 1;
-        //        foreach (Doctor doctor in Doctorlist)
-        //        {
-        //            Console.WriteLine(doctorNumber + " :Name " + doctor.Name + "Specialty" + doctor.Specialty);
-        //            doctorNumber++;
-        //        }
-        //    }
-
-        //    public void HospitalNurseInfo()
-        //    {
-        //        int nurseNumber = 1;
-        //        foreach (Nurse nurse in Nurselist)
-        //    {
-        //        Console.WriteLine(nurseNumber + " :Name " + nurse.Name + "Specialty" + nurse.Specialty);
-        //        nurseNumber++;
-        //    }
-        //    }
 
         public void IndividualEmployeeMenu()
         {
+            //Console.ForegroundColor = Console.Blue;
             Console.Clear();
             Console.WriteLine("Which employee would you like to select");
             hospital.IndividualEmployeeList();

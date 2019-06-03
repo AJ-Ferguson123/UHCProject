@@ -27,17 +27,22 @@ namespace UCHProject
 
         public void DoctorDrawBlood()
         {
-            this.Blood_Level -= 1;
-        }
-
+            Console.ForegroundColor = ConsoleColor.Red;
+            this.Blood_Level -= 5;
+            Console.ForegroundColor = ConsoleColor.White;
+        }// i need to run a test to see if my edit worked.
+        //ill stop after this color change
+        //that works for me. Im good now
         public void DoctorCareForPatient()
-        {
+        {            
             this.Health_Level += 10;
         }
 
         public void NurseDrawBlood()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             this.Blood_Level -= 3;
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public void NurseCareForPatient()

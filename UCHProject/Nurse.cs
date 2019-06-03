@@ -11,7 +11,7 @@ namespace UCHProject
         public int Health;
         public int Blood;
 
-        public Nurse(string name, int employeeNumber, int numberOfPatients) : base(name, employeeNumber)
+        public Nurse(string name, int employeeNumber, int numberOfPatients, Hospital hospital) : base(name, employeeNumber, hospital)
         {
             EmployeeType = "Nurse";
             Salary = 50000;
@@ -22,12 +22,16 @@ namespace UCHProject
         {
             if (BeenPaid == false)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"{this.Name} has been paid $50000");
                 BeenPaid = true;
+                Console.ForegroundColor = ConsoleColor.White;
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"{this.Name} has already been paid");
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
         public override void ShowInfo()
@@ -41,36 +45,7 @@ namespace UCHProject
                 $"Number of Patients:{this.NumberOfPatients}");
             Console.WriteLine("");
         }
-        //public void InteractNurse()
-        //{
-        //    bool interacting = true;
-        //    string interact = "";
-        //    do
-        //    {
-        //        Console.WriteLine("You are interacting with " + Name + ". Press any key to continue.");
-        //        Console.ReadLine();
-        //        Console.Clear();
-        //        Console.WriteLine("Interact Menu");                    
-        //        Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n");                   
-        //        interact = Console.ReadLine();
-        //        switch (interact)
-        //        {
-        //            case "1":
-        //                DrawBlood();
-        //                break;
-        //            case "2":
-        //                HealthLevel();
-        //                break;                        
-        //            case "3":
-
-        //                interacting = false;
-        //                break;
-        //        }
-        //    }while (interacting);
         
-
-        
-
 
     }
 }
