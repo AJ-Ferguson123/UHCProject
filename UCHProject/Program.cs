@@ -7,8 +7,7 @@ namespace UCHProject
         static void Main(string[] args)
         {
             Menu menu = new Menu();
-
-        Console.WriteLine("Hello World!");
+            menu.OpeningMenu();
         }
     }
 }
