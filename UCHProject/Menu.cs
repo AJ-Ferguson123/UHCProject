@@ -8,7 +8,7 @@ namespace UCHProject
     {
         
         bool programIsRunning = false;
-
+        
         Hospital hospital = new Hospital("Univeristy Clinic Hospital");
         Doctor Phil = new Doctor("Philip Dewgood", 14353, "MD");
         Doctor Tom = new Doctor("Thomas Smith", 43750, "Surgeon");
@@ -18,9 +18,18 @@ namespace UCHProject
         Receptionist Sally = new Receptionist("Sally Bible", 21212);
         Janitor Bill = new Janitor("Bill Harris", 31313);
         
+       
+
         public bool OpeningMenu()
         {
-
+            hospital.listOfEmployees.Add(Phil);
+            hospital.listOfEmployees.Add(Tom);
+            hospital.listOfEmployees.Add(Joy);
+            hospital.listOfEmployees.Add(Sam);
+            hospital.listOfEmployees.Add(Sarah);
+            hospital.listOfEmployees.Add(Sally);
+            hospital.listOfEmployees.Add(Bill);
+            hospital.ConstructPatients();
             Console.WriteLine("Welcome to University Hospitals Employee Management Software!");
             Console.WriteLine("Type start to begin the program. Type exit to close the program.");
             string openMenuInput = Console.ReadLine();
@@ -57,6 +66,7 @@ namespace UCHProject
             Console.WriteLine("Type 2 to view current list of employees");
             Console.WriteLine("Type 4 to select a specific employee");
             Console.WriteLine("Type 5 to pay all employees");
+            Console.WriteLine("Type 6 Show status of current of patients");
             Console.WriteLine("Type 9 to exit");
             string mainMenuInput = Console.ReadLine();
 
@@ -68,14 +78,42 @@ namespace UCHProject
                     {
                         Console.WriteLine("Here is a list of current employees.");
                         Phil.ShowInfo();
+                        Tom.ShowInfo();
+                        Joy.ShowInfo();
+                        Sam.ShowInfo();
+                        Sarah.ShowInfo();
+                        Sally.ShowInfo();
+                        Bill.ShowInfo();
                     }
                     break;
-                case "3":
+                    
+                case "6":
+                    {
+                        Console.Clear();
+                        foreach(Patient element in hospital.listOfPatients)
+                        {
+                            element.PatientShowInfo();
+                            Console.WriteLine("");
+                        }
+                    }
                     break;
-                case "4":
+
+                case "4": IndividualEmployeeMenu();
                     break;
-                case "9":
+
+                case "5":
+                    Phil.PaySalary();
+                    Tom.PaySalary();
+                    Joy.PaySalary();
+                    Sam.PaySalary();
+                    Sarah.PaySalary();
+                    Sally.PaySalary();
+                    Bill.PaySalary();
                     break;
+
+                case "9": programIsRunning = false;
+                    break;
+
                 default:
                     Console.WriteLine("please type in a number from the menu.");
                     break;
@@ -121,10 +159,37 @@ namespace UCHProject
         //    }
         //    }
 
-        //public void IndividualEmployeeMenu()
-        //    {
-        //            Console.WriteLine("Which employee would you like to select");
-        //    }
+        public void IndividualEmployeeMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("Which employee would you like to select");
+            hospital.IndividualEmployeeList();
+
+            int IndividualEmployeeInput = Convert.ToInt32(Console.ReadLine());
+            Employee selectedEmployee = hospital.listOfEmployees[IndividualEmployeeInput - 1];
+            Console.WriteLine("What would you like to do?");
+            if (selectedEmployee.GetType() == typeof(Doctor))
+            {
+                Console.WriteLine("youve have selected doctor");
+                //Doctor selectedDoctor = selectedEmployee;
+            }
+
+            else if (selectedEmployee.GetType() == typeof(Nurse))
+            {
+                Console.WriteLine("youve have selected nurse");
+                selectedEmployee.ShowInfo();
+            }
+
+            else if (selectedEmployee.GetType() == typeof(Receptionist))
+            {
+                Console.WriteLine("youve have selected receptionist");
+            }
+            else if (selectedEmployee.GetType() == typeof(Janitor))
+            {
+                Console.WriteLine("youve have selected janitor");
+            }
+            else MainMenu();
+        }
 
     }
 }

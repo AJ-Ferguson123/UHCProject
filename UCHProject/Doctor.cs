@@ -49,33 +49,33 @@ namespace UCHProject
         //{
         //    bool interacting = true;
         //    string interact = "";
-        //    //do
-        //    //{
-        //    //    Console.WriteLine("You are interacting with " + Name + ". Press any key to continue.");
-        //    //    Console.ReadLine();
-        //    //    Console.Clear();
-        //    //    Console.WriteLine("Interact Menu");
-        //    //    Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n");
-        //    //    interact = Console.ReadLine();
-        //    //    switch (interact)
-        //    //    {
-        //    //        case "1":
-        //    //            //DrawBlood();
-        //    //            break;
-        //    //        case "2":
-        //    //            //HealthLevel();
-        //    //            break;
-        //    //        case "3":
+        //    do
+        //    {
+        //        Console.WriteLine("You are interacting with " + Name + ". Press any key to continue.");
+        //        Console.ReadLine();
+        //        Console.Clear();
+        //        Console.WriteLine("Interact Menu");
+        //        Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n");
+        //        interact = Console.ReadLine();
+        //        switch (interact)
+        //        {
+        //            case "1":
+        //                //DrawBlood();
+        //                break;
+        //            case "2":
+        //                //HealthLevel();
+        //                break;
+        //            case "3":
 
-        //    //            interacting = false;
-        //    //            break;
-        //    //    }
-        //}
-            
-            ////while (interacting)
+        //                interacting = false;
+        //                break;
+        //        }
+        //    }
 
-        //public override void //PaySalary()
-        //{
+        //    while (interacting)
+
+        //     public override void //PaySalary()
+        //    {
         //    if (BeenPaid == false)
         //    {
         //        Console.WriteLine($"You have been paid {Doctor.Name} $50000");
@@ -86,6 +86,6 @@ namespace UCHProject
         //        Console.WriteLine($"{Doctor} has already been paid");
         //    }
 
-        //}
     }
 }
+

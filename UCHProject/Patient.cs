@@ -18,6 +18,12 @@ namespace UCHProject
             Blood_Level = 100;
         }
 
+        public void PatientShowInfo()
+        {
+            Console.WriteLine($"PatientNumber: {this.PatientNumber}\n" +
+                $"Health Level {this.Health_Level}\n" +
+                $"Blood Level:{this.Blood_Level}");
+        }
         
 
 
