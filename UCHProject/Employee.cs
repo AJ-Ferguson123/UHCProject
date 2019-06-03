@@ -39,15 +39,27 @@ namespace UCHProject
         {
             Console.WriteLine("Employee Info:");
             Console.WriteLine($"Name:{this.Name}\n" +
-                $"Employee Number:{this.EmployeeNumber}\n" +
-                $"Profession:{this.EmployeeType}\n" +
-                $"Salary:{this.Salary}\n" +
-                $"Been paid?:{this.BeenPaid}");
+            $"Employee Number:{this.EmployeeNumber}\n" +
+            $"Profession:{this.EmployeeType}\n" +
+            $"Salary:{this.Salary}\n" +
+            $"Been paid?:{this.BeenPaid}");
             Console.WriteLine("");
         }
         public virtual void InteractDoctor()
         {
             
+        }
+        public virtual void InteractNurse()
+        {
+
+        }
+        public virtual void InteractReceptionist()
+        {
+
+        }
+        public virtual void InteractJanitor()
+        {
+
         }
         public void EmployeeStatus()
         {

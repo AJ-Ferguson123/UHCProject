@@ -53,5 +53,33 @@ namespace UCHProject
             Console.WriteLine("");
         }
 
+        public override void InteractJanitor()
+        {
+
+            bool interacting = true;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine($"You are interacting with {this.Name}.");
+                Console.WriteLine("");
+                Console.WriteLine("Interact Menu");
+                Console.WriteLine(" 1 = Start sweeping floors\n 2 = Stop sweeping floors\n 3 = Return to above menu");
+                string interactJanitorInput = Console.ReadLine();
+                switch (interactJanitorInput)
+                {
+                    case "1":
+                        Console.WriteLine($"{this.Name} Has started sweeping the floors.");
+                        StartSweeping();
+                        break;
+                    case "2":
+                        Console.WriteLine($"{this.Name} Has stopped sweeping the floors.");
+                        StopSweeping();
+                        break;
+                    case "3":
+                        interacting = false;
+                        break;
+                }
+            } while (interacting);
+        }
     }
 }

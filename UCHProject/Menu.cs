@@ -8,12 +8,9 @@ namespace UCHProject
     {
         
         bool programIsRunning = false;
-        public Hospital hospital = new Hospital("Univeristy Clinic Hospital");
+        public Hospital hospital = new Hospital("Univeristy Clinic Hospital");      
         
-        
-        
-
-        
+                
         public void ConstructOriginalEmployees()
         {
             Doctor doctor = new Doctor("Philip Dewgood", 14353, hospital, "MD");
@@ -85,13 +82,11 @@ namespace UCHProject
                 case "2":
                     {
                         Console.WriteLine("Here is a list of current employees.");
-                        //Phil.ShowInfo();
-                        //Tom.ShowInfo();
-                        //Joy.ShowInfo();
-                        //Sam.ShowInfo();
-                        //Sarah.ShowInfo();
-                        //Sally.ShowInfo();
-                        //Bill.ShowInfo();
+                        foreach (Employee element in hospital.listOfEmployees)
+                        {
+                            element.ShowInfo();
+                            Console.WriteLine("");
+                        }
                     }
                     break;
                     
@@ -127,16 +122,13 @@ namespace UCHProject
                     break;
 
             }
-
-
-
-
+                                 
         }
 
 
         public void IndividualEmployeeMenu()
         {
-            //Console.ForegroundColor = Console.Blue;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.Clear();
             Console.WriteLine("Which employee would you like to select");
             hospital.IndividualEmployeeList();
@@ -151,19 +143,19 @@ namespace UCHProject
 
             else if (selectedEmployee.GetType() == typeof(Nurse))
             {
-                Console.Clear();
-                Console.WriteLine($"youve have selected {selectedEmployee.Name}");
-                selectedEmployee.ShowInfo();
+                selectedEmployee.InteractNurse();
             }
 
             else if (selectedEmployee.GetType() == typeof(Receptionist))
             {
-                Console.WriteLine("youve have selected receptionist");
+                selectedEmployee.InteractReceptionist();
             }
+
             else if (selectedEmployee.GetType() == typeof(Janitor))
             {
-                Console.WriteLine("youve have selected janitor");
+                selectedEmployee.InteractJanitor();
             }
+
             else MainMenu();
         }
 

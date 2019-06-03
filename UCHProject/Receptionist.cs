@@ -41,8 +41,6 @@ namespace UCHProject
                 Console.WriteLine($"{this.Name} has already been paid");
                 Console.ForegroundColor = ConsoleColor.White;
             }
-
-
         }
 
         public override void ShowInfo()
@@ -56,6 +54,33 @@ namespace UCHProject
             Console.WriteLine("");
         }
 
+        public override void InteractReceptionist()
+        {
 
+            bool interacting = true;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine($"You are interacting with {this.Name}.");
+                Console.WriteLine("");
+                Console.WriteLine("Interact Menu");
+                Console.WriteLine(" 1 = Start answering phones\n 2 = Stop answering phones\n 3 = Return to above menu");
+                string interactReceptionistInput = Console.ReadLine();
+                switch (interactReceptionistInput)
+                {
+                    case "1":
+                        Console.WriteLine($"{this.Name} Has started answering phone calls.");
+                        AnsweringPhone();
+                        break;
+                    case "2":
+                        Console.WriteLine($"{this.Name} Has stopped answering phone calls.");
+                        HangUpPhone();
+                        break;
+                    case "3":
+                        interacting = false;
+                        break;
+                }
+            } while (interacting);
+        }
     }
 }

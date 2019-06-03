@@ -4,9 +4,9 @@ using System.Text;
 
 namespace UCHProject
 {
-   public class Nurse : Employee
+    public class Nurse : Employee
     {
-        
+
         public int NumberOfPatients;
         public int Health;
         public int Blood;
@@ -17,7 +17,7 @@ namespace UCHProject
             Salary = 50000;
             NumberOfPatients = 5;
         }
-                          
+
         public override void PaySalary()
         {
             if (BeenPaid == false)
@@ -38,14 +38,55 @@ namespace UCHProject
         {
             Console.WriteLine("Employee Info:");
             Console.WriteLine($"Name:{this.Name}\n" +
-                $"Employee Number:{this.EmployeeNumber}\n" +
-                $"Profession:{this.EmployeeType}\n" +
-                $"Salary:{this.Salary}\n" +
-                $"Been paid?:{this.BeenPaid}\n" +
-                $"Number of Patients:{this.NumberOfPatients}");
+            $"Employee Number:{this.EmployeeNumber}\n" +
+            $"Profession:{this.EmployeeType}\n" +
+            $"Salary:{this.Salary}\n" +
+            $"Been paid?:{this.BeenPaid}\n" +
+            $"Number of Patients:{this.NumberOfPatients}");
             Console.WriteLine("");
         }
-        
+        public override void InteractNurse()
+        {
 
+            bool interacting = true;
+            do
+            {
+
+                int IndividualPatientInput;
+                Patient selectedPatient;
+
+
+                Console.WriteLine($"You are interacting with {this.Name}. Press any key to continue.");
+                Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Interact Menu");
+                Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n 3 = Return to above menu");
+                string interactNurseInput = Console.ReadLine();
+                switch (interactNurseInput)
+                {
+                    case "1":
+                        Console.WriteLine("Which Patient would you like to select");
+                        Hospital.IndividualPatientList();
+
+                        IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
+                        selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
+                        selectedPatient.DoctorDrawBlood();
+                        break;
+                    case "2":
+                        Console.WriteLine("Which Patient would you like to select");
+                        Hospital.IndividualPatientList();
+
+                        IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
+                        selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
+                        selectedPatient.DoctorCareForPatient();
+                        break;
+                    case "3":
+                        interacting = false;
+                        break;
+                }
+            } while (interacting);
+
+        }
     }
 }
+

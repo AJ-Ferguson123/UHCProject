@@ -5,8 +5,7 @@ using System.Text;
 namespace UCHProject
 {
     public class Doctor : Employee
-    {
-        
+    {        
         public string Specialty;
         
         public Doctor(string name, int employeeNumber, Hospital hospital, string specialty) : base(name, employeeNumber, hospital)
@@ -14,9 +13,7 @@ namespace UCHProject
             EmployeeType = "Doctor";
             Specialty = specialty;
             Salary = 90000;
-        }
-
-        
+        }        
 
         public override void PaySalary()
         {
@@ -58,9 +55,9 @@ namespace UCHProject
                 Patient selectedPatient;
                 
 
-                Console.WriteLine($"You are interacting with {this.Name}. Press any key to continue.");
-                Console.ReadLine();
                 Console.Clear();
+                Console.WriteLine($"You are interacting with {this.Name}.");
+                Console.WriteLine("");
                 Console.WriteLine("Interact Menu");
                 Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n 3 = Return to above menu");
                 string interactDoctorInput = Console.ReadLine();
@@ -72,7 +69,7 @@ namespace UCHProject
 
                         IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
                         selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
-                        selectedPatient.DoctorDrawBlood();
+                        selectedPatient.NurseDrawBlood();
                         break;
                     case "2":
                         Console.WriteLine("Which Patient would you like to select");
@@ -80,7 +77,7 @@ namespace UCHProject
 
                         IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
                         selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
-                        selectedPatient.DoctorCareForPatient();
+                        selectedPatient.NurseCareForPatient();
                         break;
                     case "3":interacting = false;
                         break;
