@@ -9,7 +9,6 @@ namespace UCHProject
         
         bool programIsRunning = false;
         public Hospital hospital = new Hospital("Univeristy Clinic Hospital");      
-        
                 
         public void ConstructOriginalEmployees()
         {
@@ -31,7 +30,6 @@ namespace UCHProject
 
         public bool OpeningMenu()
         {
-            
             hospital.ConstructPatients();
             ConstructOriginalEmployees();
             Console.WriteLine("Welcome to University Hospitals Employee Management Software!\n");
@@ -39,13 +37,13 @@ namespace UCHProject
             string openMenuInput = Console.ReadLine();
             Console.Clear();
 
-            if (openMenuInput == "start")
+            if (openMenuInput.ToLower() == "start")
             {
                 programIsRunning = true;
                 
             }
 
-            else if (openMenuInput == "exit")
+            else if (openMenuInput.ToLower() == "exit")
             {
                 programIsRunning = false;
             }
@@ -68,10 +66,10 @@ namespace UCHProject
         public void MainMenu()
         {
             Console.ForegroundColor = ConsoleColor.Blue;            
-            Console.WriteLine("Type 2 to view current list of employees");
-            Console.WriteLine("Type 4 to select a specific employee");
-            Console.WriteLine("Type 5 to pay all employees");
-            Console.WriteLine("Type 6 Show status of current of patients");
+            Console.WriteLine("Type 1 to view current list of employees");
+            Console.WriteLine("Type 2 to select a specific employee");
+            Console.WriteLine("Type 3 to pay all employees");
+            Console.WriteLine("Type 4 Show status of current of patients");
             Console.WriteLine("Type 9 to exit");
             string mainMenuInput = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.White;
@@ -79,9 +77,11 @@ namespace UCHProject
             switch (mainMenuInput)
             {
                 
-                case "2":
+                case "1":
                     {
+                        Console.Clear();
                         Console.WriteLine("Here is a list of current employees.");
+                        Console.WriteLine("");
                         foreach (Employee element in hospital.listOfEmployees)
                         {
                             element.ShowInfo();
@@ -90,7 +90,20 @@ namespace UCHProject
                     }
                     break;
                     
-                case "6":
+                case "2": IndividualEmployeeMenu();
+                    break;
+
+                case "3":
+                    Console.Clear();
+                    Console.WriteLine("You have paid all of your employees.");
+                    foreach (Employee element in hospital.listOfEmployees)
+                    {
+                        element.PaySalary();
+                        Console.WriteLine("");
+                    }
+                    break;
+
+                case "4":
                     {
                         Console.Clear();
                         foreach(Patient element in hospital.listOfPatients)
@@ -101,30 +114,14 @@ namespace UCHProject
                     }
                     break;
 
-                case "4": IndividualEmployeeMenu();
-                    break;
-
-                case "5":
-                    Console.Clear();
-                    Console.WriteLine("You have paid all of your employees.");
-                    foreach (Employee element in hospital.listOfEmployees)
-                    {
-                        element.PaySalary();
-                        Console.WriteLine("");
-                    }
-                    break;
-
                 case "9": programIsRunning = false;
                     break;
 
                 default:
                     Console.WriteLine("please type in a number from the menu.");
                     break;
-
             }
-                                 
         }
-
 
         public void IndividualEmployeeMenu()
         {
@@ -134,7 +131,7 @@ namespace UCHProject
 
             int IndividualEmployeeInput = Convert.ToInt32(Console.ReadLine());
             Employee selectedEmployee = hospital.listOfEmployees[IndividualEmployeeInput - 1];
-            //Console.WriteLine("What would you like to do?");
+
             if (selectedEmployee.GetType() == typeof(Doctor))
             {
                 selectedEmployee.InteractDoctor();

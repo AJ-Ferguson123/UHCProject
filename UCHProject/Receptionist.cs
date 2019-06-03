@@ -18,7 +18,6 @@ namespace UCHProject
 
         public void AnsweringPhone()
         {
-
             this.AreTheyOnThePhone = true;
         }
         public void HangUpPhone()
@@ -57,7 +56,6 @@ namespace UCHProject
 
         public override void InteractReceptionist()
         {
-
             bool interacting = true;
             do
             {

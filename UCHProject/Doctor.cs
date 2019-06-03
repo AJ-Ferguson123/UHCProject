@@ -46,15 +46,11 @@ namespace UCHProject
 
         public override void InteractDoctor()
         {
-            
             bool interacting = true;
             do
             {
-                
                 int IndividualPatientInput;
                 Patient selectedPatient;
-                
-
                 
                 Console.WriteLine($"You are interacting with {this.Name}.");
                 Console.WriteLine("");
@@ -70,8 +66,9 @@ namespace UCHProject
 
                         IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
                         selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
-                        selectedPatient.NurseDrawBlood();
+                        selectedPatient.DoctorDrawBlood();
                         break;
+
                     case "2":
                         Console.Clear();
                         Console.WriteLine("Which Patient would you like to select");
@@ -79,8 +76,9 @@ namespace UCHProject
 
                         IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
                         selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
-                        selectedPatient.NurseCareForPatient();
+                        selectedPatient.DoctorCareForPatient();
                         break;
+
                     case "3":
                         {
                             Console.Clear();
@@ -91,13 +89,13 @@ namespace UCHProject
                             }
                         }
                         break;
-                    case "4":interacting = false;
+
+                    case "4":
+                        Console.Clear();
+                        interacting = false;
                         break;
                 }
             } while (interacting);
-
-            
-            
         }
     }
 }

@@ -7,9 +7,8 @@ namespace UCHProject
     public class Patient
     {
         public int PatientNumber;
-        public int Health_Level;
         public int Blood_Level;
-        
+        public int Health_Level;
 
         public Patient(int patientnumber) 
         {
@@ -48,11 +47,5 @@ namespace UCHProject
         {
             this.Health_Level += 5;
         }
-
-
-
-
-
-
     }
 }

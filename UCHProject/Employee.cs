@@ -46,26 +46,12 @@ namespace UCHProject
             Console.WriteLine("");
         }
         public virtual void InteractDoctor()
-        {
-            
-        }
+        { }
         public virtual void InteractNurse()
-        {
-
-        }
+        { }
         public virtual void InteractReceptionist()
-        {
-
-        }
+        { }
         public virtual void InteractJanitor()
-        {
-
-        }
-        public void EmployeeStatus()
-        {
-
-        }
-
-
+        { }
     }
 }

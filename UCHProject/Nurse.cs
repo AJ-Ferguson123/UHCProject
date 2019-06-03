@@ -47,39 +47,39 @@ namespace UCHProject
         }
         public override void InteractNurse()
         {
-
             bool interacting = true;
             do
             {
-
                 int IndividualPatientInput;
                 Patient selectedPatient;
 
-
-                Console.WriteLine($"You are interacting with {this.Name}. Press any key to continue.");
-                Console.ReadLine();
-                Console.Clear();
+                Console.WriteLine($"You are interacting with {this.Name}.");
+                Console.WriteLine("");
                 Console.WriteLine("Interact Menu");
                 Console.WriteLine(" 1 = DrawBlood:\n 2 = AffectHealth:\n 3 = Show the status of Patients:\n 4 = Return to above menu");
                 string interactNurseInput = Console.ReadLine();
                 switch (interactNurseInput)
                 {
                     case "1":
+                        Console.Clear();
                         Console.WriteLine("Which Patient would you like to select");
                         Hospital.IndividualPatientList();
 
                         IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
                         selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
-                        selectedPatient.DoctorDrawBlood();
+                        selectedPatient.NurseDrawBlood();
                         break;
+
                     case "2":
+                        Console.Clear();
                         Console.WriteLine("Which Patient would you like to select");
                         Hospital.IndividualPatientList();
 
                         IndividualPatientInput = Convert.ToInt32(Console.ReadLine());
                         selectedPatient = Hospital.listOfPatients[IndividualPatientInput - 1];
-                        selectedPatient.DoctorCareForPatient();
+                        selectedPatient.NurseCareForPatient();
                         break;
+
                     case "3":
                         {
                             Console.Clear();
@@ -90,12 +90,13 @@ namespace UCHProject
                             }
                         }
                         break;
+
                     case "4":
+                        Console.Clear();
                         interacting = false;
                         break;
                 }
             } while (interacting);
-
         }
     }
 }
